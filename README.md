@@ -24,6 +24,13 @@
 ### 🎭 Stats & Dialogue
 > **"Hai! Mau kenalan lebih jauh?"**
 
+| Key | Action |
+|-----|--------|
+| `←` / `→` | Move Player |
+| `E` / `Space` | Next Dialogue / Skip Typing |
+| `Q` | Skip to End |
+| `R` | Restart Story |
+
 | Stat | Info |
 | :--- | :--- |
 | **HP / MP** | 99/99 / 50/50 |
