@@ -1,69 +1,64 @@
-# 🎮 Pixel Adventure: 2D Retro Experience
+<h1 align="center">🎮 Fikri Bintang's Adventure</h1>
 
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+<p align="center">
+  <img src="preview.png" width="800" alt="Pixel Adventure Preview">
+</p>
+
+---
+
+## 🕹️ Featured Project: Pixel Adventure
 
 **Pixel Adventure** is a visually stunning 2D retro-style world built entirely with Vanilla Web Technologies. Immerse yourself in a nostalgic 8-bit aesthetic featuring CRT effects, typewriter dialogues, and a floating island atmosphere.
 
----
-
-## 📸 Preview
-
-![Game Preview](preview.png)
-
-*Captured during exploration of the floating ruins.*
+### ✨ Features
+- **📺 Retro CRT Overlay**: Authentic scanlines and flickering effects.
+- **💬 Dynamic Dialogue System**: Interactive NPC dialogues with typewriter animation.
+- **🕹️ Character Movement**: Control your hero using arrow keys.
+- **🎨 Pixel-Perfect Design**: Custom CSS-based UI components.
 
 ---
 
-## ✨ Features
+### 🎭 Profil Karakter
+> **"Hai! Mau kenalan lebih jauh?"**
 
-- **📺 Retro CRT Overlay**: Authentic scanlines and flickering effects for that true old-school monitor feel.
-- **💬 Dynamic Dialogue System**: Interactive NPC dialogues with a smooth typewriter animation effect.
-- **🕹️ Character Movement**: Control your hero using arrow keys with responsive sprite flipping.
-- **🎨 Pixel-Perfect Design**: Custom CSS-based UI components inspired by classic JRPGs.
-- **🏗️ Pure Tech**: No frameworks, just raw HTML, CSS, and JavaScript.
-
----
-
-## 🚀 How to Run
-
-Since this project uses local assets, it's best viewed through a local server or directly opening the HTML file:
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/pixel-2d-world.git
-   ```
-2. **Open `index.html`**:
-   Simply double-click `index.html` or use a VS Code extension like **Live Server** for the best experience.
+| Stat | Info |
+| :--- | :--- |
+| **Nama** | Fikri Bintang |
+| **Kelas** | Mahasiswa Semester 4 |
+| **Base** | Indonesia |
+| **HP / MP** | 99/99 / 50/50 |
 
 ---
 
-## 🎹 Controls
-
-| Key | Action |
-|-----|--------|
-| `←` / `→` | Move Player |
-| `E` / `Space` / `Enter` | Interact / Next Dialogue |
-
----
-
-## 🛠️ Built With
-
-- **HTML5**: Semantic structure.
-- **Vanilla CSS**: Custom CRT filters, animations, and layouts.
-- **JavaScript (ES6)**: Dialogue logic and movement mechanics.
-- **Google Fonts**: "Press Start 2P" for the retro typography.
+### 📜 Dialogue Log
+* **Fikri:** "Hai! Mau kenalan lebih jauh?"
+* **Fikri:** "Nama gue Fikri Bintang."
+* **Fikri:** "Sekarang lagi jalanin hidup sebagai mahasiswa semester 4."
+* **Fikri:** "Selamat datang di GitHub gue, siap buat explore bareng?"
 
 ---
 
-## 📜 License
+### 🎒 Inventory (Tech Stack)
+<p align="left">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" />
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
+  <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" />
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+</p>
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+---
+
+### ⚔️ Active Quests (Current Projects)
+- [x] **Pixel Adventure**: Build an immersive 2D retro world.
+- [ ] Naikin IPK setinggi mungkin (no pressure 😅)
+- [ ] Ngebangun App Absensi (SIABSENSI) biar makin solid & kepake
+- [ ] Ngulik dan eksperimen pixel art di GitHub
 
 ---
 
 <p align="center">
-  Developed with ❤️ for the Retro Gaming Community.
+  <img src="https://capsule-render.vercel.app/render?type=waving&color=auto&height=200&section=footer&text=THANK%20YOU%20FOR%20VISITING&fontSize=40" width="100%">
 </p>
