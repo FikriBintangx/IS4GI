@@ -1,46 +1,28 @@
 const dialogueText = document.getElementById('dialogue-text');
+const bgLayer = document.getElementById('bg-layer');
+const bustImg = document.getElementById('bust-img');
+
 const dialogues = [
-    // 1. Opening
-    "...",
-    "Oh? Someone just entered this world.",
-    "Welcome, traveler.",
+    // SCENE: Campus
+    { text: "...", scene: "bg_campus.png" },
+    { text: "Oh? Someone just entered this world.", scene: "bg_campus.png" },
+    { text: "Welcome, traveler.", scene: "bg_campus.png" },
+    { text: "You're probably wondering who I am.", scene: "bg_campus.png" },
+    { text: "My name is Fikri... but some call me IS4GI.", scene: "bg_campus.png" },
+    { text: "Just a player trying to level up in life.", scene: "bg_campus.png" },
+    { text: "Currently a 4th semester student.", scene: "bg_campus.png" },
+    { text: "Balancing between study... and real-world grinding.", scene: "bg_campus.png" },
     
-    // 2. Identity Reveal
-    "You're probably wondering who I am.",
-    "My name is Fikri... but some call me IS4GI.",
-    "Just a player trying to level up in life.",
-    
-    // 3. Background
-    "Currently a 4th semester student.",
-    "Balancing between study... and real-world grinding.",
-    "Not easy, but that's part of the game.",
-    
-    // 4. Role / Class
-    "Class: Front-End Developer.",
-    "Special ability: crafting aesthetic and clean UI.",
-    "I turn ideas into interactive experiences.",
-    
-    // 5. Tech Stack
-    "Inventory loaded...",
-    "HTML, CSS, JavaScript...",
-    "React, Next.js, Flutter...",
-    "Still upgrading every day.",
-    
-    // 6. Current Quest
-    "Current quest:",
-    "Building a stable attendance app.",
-    "Exploring UI design and pixel aesthetics.",
-    "Trying to create something meaningful.",
-    
-    // 7. Philosophy
-    "I believe progress > perfection.",
-    "Every bug is just another challenge.",
-    "And every project... is a new adventure.",
-    
-    // 8. Closing
-    "So...",
-    "Are you ready to explore my world?",
-    "Press [R] to restart or just enjoy the view. Let's build something great!"
+    // SCENE: Lab
+    { text: "Let me show you where the magic happens.", scene: "bg_lab.png" },
+    { text: "Class: Front-End Developer.", scene: "bg_lab.png" },
+    { text: "Special ability: crafting aesthetic and clean UI.", scene: "bg_lab.png" },
+    { text: "Inventory loaded: HTML, CSS, JavaScript...", scene: "bg_lab.png" },
+    { text: "And of course: React, Next.js, Flutter.", scene: "bg_lab.png" },
+    { text: "Current quest: Building a stable attendance app.", scene: "bg_lab.png" },
+    { text: "I believe progress > perfection.", scene: "bg_lab.png" },
+    { text: "So... are you ready to explore my world?", scene: "bg_lab.png" },
+    { text: "Press [R] to restart. Let's build something great!", scene: "bg_lab.png" }
 ];
 
 let currentDialogueIndex = 0;
@@ -52,7 +34,7 @@ function typeWriter(text, i) {
         dialogueText.innerHTML = text.substring(0, i + 1) + '<span class="cursor" aria-hidden="true"></span>';
         isTyping = true;
         
-        const delay = Math.random() * 30 + 20; // Faster typing for better feel
+        const delay = Math.random() * 20 + 15;
         
         typeTimeout = setTimeout(() => {
             typeWriter(text, i + 1)
@@ -62,68 +44,57 @@ function typeWriter(text, i) {
     }
 }
 
+function updateScene(scenePath) {
+    const currentBg = bgLayer.style.backgroundImage;
+    const newBg = `url('${scenePath}')`;
+    
+    if (currentBg !== newBg) {
+        bgLayer.style.opacity = 0;
+        setTimeout(() => {
+            bgLayer.style.backgroundImage = newBg;
+            bgLayer.style.opacity = 1;
+        }, 300);
+    }
+}
+
 function startDialogue(index) {
     clearTimeout(typeTimeout);
     isTyping = false;
     currentDialogueIndex = index;
-    typeWriter(dialogues[index], 0);
+    
+    const dialogue = dialogues[index];
+    updateScene(dialogue.scene);
+    typeWriter(dialogue.text, 0);
 }
 
 function nextDialogue() {
     if (isTyping) {
-        // Skip typing animation
         clearTimeout(typeTimeout);
-        dialogueText.innerHTML = dialogues[currentDialogueIndex];
+        dialogueText.innerHTML = dialogues[currentDialogueIndex].text;
         isTyping = false;
     } else {
-        currentDialogueIndex++;
-        if (currentDialogueIndex < dialogues.length) {
-            startDialogue(currentDialogueIndex);
+        if (currentDialogueIndex < dialogues.length - 1) {
+            startDialogue(currentDialogueIndex + 1);
         }
     }
 }
 
 function skipAll() {
-    clearTimeout(typeTimeout);
-    currentDialogueIndex = dialogues.length - 1;
-    startDialogue(currentDialogueIndex);
+    startDialogue(dialogues.length - 1);
 }
 
 function restartGame() {
-    currentDialogueIndex = 0;
     startDialogue(0);
 }
 
-// Initial dialogue
+// Initial
 startDialogue(0);
 
-// Interaction
 document.addEventListener('keydown', (e) => {
     const key = e.key.toLowerCase();
-    
-    if (key === 'e' || key === ' ' || key === 'enter') {
-        nextDialogue();
-    } else if (key === 'q') {
-        skipAll();
-    } else if (key === 'r') {
-        restartGame();
-    }
+    if (key === 'e' || key === ' ' || key === 'enter') nextDialogue();
+    else if (key === 'q') skipAll();
+    else if (key === 'r') restartGame();
 });
 
-// Simple player movement (Visual only)
-const player = document.getElementById('player');
-let posX = 50;
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-        posX = Math.max(10, posX - 2);
-        player.style.left = posX + '%';
-        player.style.transform = 'translateX(-50%) scaleX(-1)';
-    } else if (e.key === 'ArrowRight') {
-        posX = Math.min(90, posX + 2);
-        player.style.left = posX + '%';
-        player.style.transform = 'translateX(-50%) scaleX(1)';
-    }
-});
-
-console.log("Fikri's Adventure Initialized. [E] Next, [Q] Skip, [R] Restart.");
+console.log("Fikri's Adventure (Visual Novel Edition) Initialized.");
