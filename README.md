@@ -5,22 +5,22 @@
 </p>
 
 ### 🎭 Profil Karakter
-> **"Hai? Kamu mau mengenal ku lebih jauh?"**
+> **"Hai! Mau kenalan lebih jauh?"**
 
 | Stat | Info |
 | :--- | :--- |
 | **Nama** | Fikri Bintang |
-| **Kelas** | Mahasiswa Semester 4 (Active Student) |
+| **Kelas** | Mahasiswa Semester 4 |
 | **Base** | Indonesia |
 | **HP / MP** | 99/99 / 50/50 |
 
 ---
 
 ### 📜 Dialogue Log
-*   **Fikri:** "Hai? Kamu mau mengenal ku lebih jauh?"
-*   **Fikri:** "Kenalkan nama aku Fikri Bintang."
-*   **Fikri:** "Aku seorang mahasiswa aktif untuk sekarang di semester 4."
-*   **Fikri:** "Selamat datang di GitHub aku! Mari berpetualang bersama."
+* **Fikri:** "Hai! Mau kenalan lebih jauh?"
+* **Fikri:** "Nama gue Fikri Bintang."
+* **Fikri:** "Sekarang lagi jalanin hidup sebagai mahasiswa semester 4."
+* **Fikri:** "Selamat datang di GitHub gue, siap buat explore bareng?"
 
 ---
 
@@ -35,12 +35,12 @@
 ---
 
 ### ⚔️ Active Quests (Current Projects)
-- [ ] Menaklukkan Semester 4 dengan IPK Sempurna
-- [ ] Membangun App Absensi (SIABSENSI) yang Stabil
-- [ ] Eksplorasi Dunia Pixel Art di GitHub
+- [ ] Naikin IPK setinggi mungkin (no pressure 😅)
+- [ ] Ngebangun App Absensi (SIABSENSI) biar makin solid & kepake
+- [ ] Ngulik dan eksperimen pixel art di GitHub
 
 ---
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/render?type=waving&color=auto&height=200&section=footer&text=TERIMA%20KASIH&fontSize=40" width="100%">
+  <img src="https://capsule-render.vercel.app/render?type=waving&color=auto&height=200&section=footer&text=THANK%20YOU%20FOR%20VISITING&fontSize=40" width="100%">
 </p>
