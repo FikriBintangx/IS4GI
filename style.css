@@ -173,6 +173,15 @@ body {
     margin-top: 10px;
 }
 
+.controls-hint {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+}
+
 .blinking-cursor {
     position: absolute;
     bottom: 15px;
