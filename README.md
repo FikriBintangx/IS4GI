@@ -10,6 +10,12 @@
 
 **Pixel Adventure** is a visually stunning 2D retro-style world built entirely with Vanilla Web Technologies. Immerse yourself in a nostalgic 8-bit aesthetic featuring CRT effects, typewriter dialogues, and a floating island atmosphere.
 
+<p align="center">
+  <a href="https://fikribintangx.github.io/IS4GI/">
+    <img src="https://img.shields.io/badge/PLAY%20NOW-Click%20Here-green?style=for-the-badge&logo=google-play&logoColor=white" alt="Play Now">
+  </a>
+</p>
+
 ### ✨ Features
 - **📺 Retro CRT Overlay**: Authentic scanlines and flickering effects.
 - **💬 Dynamic Dialogue System**: Interactive NPC dialogues with typewriter animation.
