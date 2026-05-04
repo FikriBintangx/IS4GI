@@ -15,7 +15,17 @@
     <div class="scanlines"></div>
     <div class="glitch-flash" id="glitch-overlay"></div>
 
-    <main class="game-container">
+    <!-- Start Screen -->
+    <div id="start-screen" class="start-screen">
+        <div class="logo">IS4GI: THE ADVENTURE</div>
+        <div class="start-prompt">PRESS ANY KEY TO START</div>
+        <div class="version">v1.2.0-FINAL</div>
+    </div>
+
+    <!-- Achievement Toast -->
+    <div id="achievement-container"></div>
+
+    <main class="game-container hidden">
         <header class="ui-header">
             <div class="stats-box">
                 <span class="stat">AGE: <span class="value">21</span></span>
@@ -28,9 +38,12 @@
 
         <section class="world-scene" id="world-scene">
             <div class="scene-background" id="bg-layer"></div>
-            
-            <!-- Day/Night Filter -->
             <div id="time-filter"></div>
+
+            <!-- Interactive Terminal (Only in Lab) -->
+            <div id="interactive-terminal" class="interactive-obj hidden" title="Hack Terminal">
+                <div class="terminal-spark"></div>
+            </div>
 
             <div class="character-bust" id="character-bust">
                 <div class="bust-grid"></div>
@@ -40,22 +53,40 @@
             <!-- Choice Overlay -->
             <div id="choice-container" class="choice-container hidden"></div>
 
-            <!-- Inventory Panel -->
+            <!-- Inventory Panel with Tabs -->
             <div id="inventory-overlay" class="inventory-overlay hidden">
                 <div class="inventory-box">
-                    <header><h3>INVENTORY: SKILLS</h3><button id="close-inv">X</button></header>
-                    <div class="skills-grid">
-                        <div class="skill-item" title="Frontend Mastery">
-                            <div class="icon">⚛️</div>
-                            <div class="label">REACT</div>
+                    <nav class="inv-nav">
+                        <button class="nav-btn active" data-tab="skills">SKILLS</button>
+                        <button class="nav-btn" data-tab="guilds">GUILDS</button>
+                        <button id="close-inv">X</button>
+                    </nav>
+
+                    <div id="skills-tab" class="tab-content">
+                        <div class="skills-grid">
+                            <div class="skill-item" onclick="triggerAchievement('Frontend Knight')">
+                                <div class="icon">⚛️</div>
+                                <div class="label">REACT</div>
+                            </div>
+                            <div class="skill-item" onclick="triggerAchievement('Logic Weaver')">
+                                <div class="icon">📜</div>
+                                <div class="label">JS</div>
+                            </div>
+                            <div class="skill-item" onclick="triggerAchievement('Mobile Knight')">
+                                <div class="icon">📱</div>
+                                <div class="label">FLUTTER</div>
+                            </div>
                         </div>
-                        <div class="skill-item" title="Logic Weaver">
-                            <div class="icon">📜</div>
-                            <div class="label">JS</div>
-                        </div>
-                        <div class="skill-item" title="Mobile Knight">
-                            <div class="icon">📱</div>
-                            <div class="label">FLUTTER</div>
+                    </div>
+
+                    <div id="guilds-tab" class="tab-content hidden">
+                        <div class="guilds-list">
+                            <a href="https://github.com/FikriBintangx" target="_blank" class="guild-item">
+                                <span class="icon">🐙</span> THE CODE GUILD (GITHUB)
+                            </a>
+                            <a href="#" target="_blank" class="guild-item">
+                                <span class="icon">⚔️</span> PROFESSIONAL CIRCLE (LINKEDIN)
+                            </a>
                         </div>
                     </div>
                 </div>
