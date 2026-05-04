@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://fikribintangx.github.io/IS4GI/">
+  <a href="https://fikribintangx.github.io/FikriBintangx/">
     <img src="https://img.shields.io/badge/PLAY%20NOW-Click%20Here-green?style=for-the-badge&logo=google-play&logoColor=white" alt="Play Now">
   </a>
 </p>
