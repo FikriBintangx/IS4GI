@@ -47,7 +47,7 @@ const dialogues = [
         scene: "bg_campus.png",
         choices: [
             { label: "Cek Inventory Skill", action: () => toggleInventory(true) },
-            { label: "Lanjut Ngobrol", action: () => nextDialogue() }
+            { label: "Lanjut Ngobrol", action: () => nextDialogue(true) }
         ]
     },
     { text: "Sini, liat tempat gue biasa ngulik sesuatu.", scene: "bg_lab.png" },
@@ -118,13 +118,16 @@ function startDialogue(index) {
     typeWriter(dialogue.text, 0);
 }
 
-function nextDialogue() {
+function nextDialogue(force = false) {
     if (isTyping) {
         clearTimeout(typeTimeout);
         dialogueText.innerHTML = dialogues[currentDialogueIndex].text;
         isTyping = false;
         showChoices();
-    } else if (currentDialogueIndex < dialogues.length - 1 && !dialogues[currentDialogueIndex].choices) {
+    } else if (currentDialogueIndex < dialogues.length - 1) {
+        // If not forced and there are choices, don't advance (wait for button click)
+        if (!force && dialogues[currentDialogueIndex].choices) return;
+        
         startDialogue(currentDialogueIndex + 1);
     }
 }
