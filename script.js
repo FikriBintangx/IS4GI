@@ -83,7 +83,10 @@ function showChoices() {
             btn.className = 'choice-btn';
             btn.innerText = `> ${choice.label}`;
             btn.onclick = () => {
-                choiceContainer.classList.add('hidden');
+                // Only hide choices if we are advancing the dialogue
+                if (choice.label.toLowerCase().includes('lanjut')) {
+                    choiceContainer.classList.add('hidden');
+                }
                 choice.action();
             };
             choiceContainer.appendChild(btn);
