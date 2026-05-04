@@ -18,19 +18,50 @@
     <main class="game-container">
         <header class="ui-header">
             <div class="stats-box">
-                <span class="stat">HP: <span class="value">99/99</span></span>
-                <span class="stat">MP: <span class="value">50/50</span></span>
+                <span class="stat">AGE: <span class="value">21</span></span>
+                <div class="bgm-control" id="bgm-toggle">
+                    <span class="icon">🎵</span> <span class="status">OFF</span>
+                </div>
             </div>
             <div class="level-box">LV. 10</div>
         </header>
 
         <section class="world-scene" id="world-scene">
             <div class="scene-background" id="bg-layer"></div>
+            
+            <!-- Day/Night Filter -->
+            <div id="time-filter"></div>
+
             <div class="character-bust" id="character-bust">
                 <div class="bust-grid"></div>
                 <img src="fikri_bust.png" alt="Fikri" id="bust-img">
             </div>
-            <div class="interaction-prompt">Press [E] to Talk</div>
+
+            <!-- Choice Overlay -->
+            <div id="choice-container" class="choice-container hidden"></div>
+
+            <!-- Inventory Panel -->
+            <div id="inventory-overlay" class="inventory-overlay hidden">
+                <div class="inventory-box">
+                    <header><h3>INVENTORY: SKILLS</h3><button id="close-inv">X</button></header>
+                    <div class="skills-grid">
+                        <div class="skill-item" title="Frontend Mastery">
+                            <div class="icon">⚛️</div>
+                            <div class="label">REACT</div>
+                        </div>
+                        <div class="skill-item" title="Logic Weaver">
+                            <div class="icon">📜</div>
+                            <div class="label">JS</div>
+                        </div>
+                        <div class="skill-item" title="Mobile Knight">
+                            <div class="icon">📱</div>
+                            <div class="label">FLUTTER</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="interaction-prompt">Press [E] to Talk | [I] Inventory</div>
         </section>
 
         <footer class="dialogue-box">
