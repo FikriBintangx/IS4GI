@@ -13,7 +13,7 @@ const dialogues = [
     { text: "Namaku Fikri, tapi orang-orang sering manggil gue IS4GI.", scene: "bg_campus.png" },
     { text: "Gue cuma player yang lagi sibuk leveling di dunia nyata.", scene: "bg_campus.png" },
     { text: "Sekarang lagi semester 4, masih proses belajar banyak hal.", scene: "bg_campus.png" },
-    { text: "Lagi nyoba balance antara kuliah... sama grinding skill programming.", scene: "bg_campus.png" },
+    { text: "aku lagi balance kuliah kerja dan mencari ilmu baru yang berkaitan dengan programming", scene: "bg_campus.png" },
     
     // SCENE: Lab
     { text: "Sini, liat tempat gue biasa ngulik sesuatu.", scene: "bg_lab.png" },
