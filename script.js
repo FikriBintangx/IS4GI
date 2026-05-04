@@ -1,28 +1,30 @@
 const dialogueText = document.getElementById('dialogue-text');
 const bgLayer = document.getElementById('bg-layer');
+const bustContainer = document.getElementById('character-bust');
 const bustImg = document.getElementById('bust-img');
+const glitchOverlay = document.getElementById('glitch-overlay');
 
 const dialogues = [
     // SCENE: Campus
     { text: "...", scene: "bg_campus.png" },
-    { text: "Oh? Someone just entered this world.", scene: "bg_campus.png" },
-    { text: "Welcome, traveler.", scene: "bg_campus.png" },
-    { text: "You're probably wondering who I am.", scene: "bg_campus.png" },
-    { text: "My name is Fikri... but some call me IS4GI.", scene: "bg_campus.png" },
-    { text: "Just a player trying to level up in life.", scene: "bg_campus.png" },
-    { text: "Currently a 4th semester student.", scene: "bg_campus.png" },
-    { text: "Balancing between study... and real-world grinding.", scene: "bg_campus.png" },
+    { text: "Loh, kamu di sini? Baru masuk ya?", scene: "bg_campus.png" },
+    { text: "Kemari, biar aku perkenalkan diriku.", scene: "bg_campus.png" },
+    { text: "Mungkin kamu penasaran aku ini siapa...", scene: "bg_campus.png" },
+    { text: "Namaku Fikri, tapi orang-orang sering manggil gue IS4GI.", scene: "bg_campus.png" },
+    { text: "Gue cuma player yang lagi sibuk leveling di dunia nyata.", scene: "bg_campus.png" },
+    { text: "Sekarang lagi semester 4, masih proses belajar banyak hal.", scene: "bg_campus.png" },
+    { text: "Lagi nyoba balance antara kuliah... sama grinding skill programming.", scene: "bg_campus.png" },
     
     // SCENE: Lab
-    { text: "Let me show you where the magic happens.", scene: "bg_lab.png" },
+    { text: "Sini, liat tempat gue biasa ngulik sesuatu.", scene: "bg_lab.png" },
     { text: "Class: Front-End Developer.", scene: "bg_lab.png" },
-    { text: "Special ability: crafting aesthetic and clean UI.", scene: "bg_lab.png" },
-    { text: "Inventory loaded: HTML, CSS, JavaScript...", scene: "bg_lab.png" },
-    { text: "And of course: React, Next.js, Flutter.", scene: "bg_lab.png" },
-    { text: "Current quest: Building a stable attendance app.", scene: "bg_lab.png" },
-    { text: "I believe progress > perfection.", scene: "bg_lab.png" },
-    { text: "So... are you ready to explore my world?", scene: "bg_lab.png" },
-    { text: "Press [R] to restart. Let's build something great!", scene: "bg_lab.png" }
+    { text: "Skill pasif: Bikin UI yang bersih, rapi, dan enak diliat.", scene: "bg_lab.png" },
+    { text: "Inventory saat ini: HTML, CSS, JavaScript...", scene: "bg_lab.png" },
+    { text: "Lagi nambah koleksi: React, Next.js, sama Flutter juga.", scene: "bg_lab.png" },
+    { text: "Quest aktif: Selesaiin aplikasi SIABSENSI biar berguna buat orang.", scene: "bg_lab.png" },
+    { text: "Prinsip gue simpel: progress jauh lebih penting dari sekadar sempurna.", scene: "bg_lab.png" },
+    { text: "Gimana? Siap buat explore bareng gue?", scene: "bg_lab.png" },
+    { text: "Tekan [R] buat ulang. Yuk, kita bikin sesuatu yang gila!", scene: "bg_lab.png" }
 ];
 
 let currentDialogueIndex = 0;
@@ -49,11 +51,15 @@ function updateScene(scenePath) {
     const newBg = `url('${scenePath}')`;
     
     if (currentBg !== newBg) {
+        // Trigger Glitch Effect
+        glitchOverlay.classList.add('active-glitch');
+        setTimeout(() => glitchOverlay.classList.remove('active-glitch'), 300);
+
         bgLayer.style.opacity = 0;
         setTimeout(() => {
             bgLayer.style.backgroundImage = newBg;
             bgLayer.style.opacity = 1;
-        }, 300);
+        }, 150);
     }
 }
 
@@ -97,4 +103,19 @@ document.addEventListener('keydown', (e) => {
     else if (key === 'r') restartGame();
 });
 
-console.log("Fikri's Adventure (Visual Novel Edition) Initialized.");
+// 3D Mouse Follow Effect for Character Bust
+document.addEventListener('mousemove', (e) => {
+    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+    
+    // Reverse axes for more natural feel and limit rotation
+    const rotateY = -xAxis;
+    const rotateX = yAxis;
+    
+    bustContainer.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+    
+    // Add dynamic shadow based on mouse position
+    bustContainer.style.boxShadow = `${-xAxis}px ${yAxis}px 30px rgba(255, 215, 0, 0.4)`;
+});
+
+console.log("Fikri's Adventure (Insane 3D Edition) Initialized.");
