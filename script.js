@@ -219,7 +219,21 @@ window.onkeydown = () => { if (!gameStarted) startGame(); };
 document.addEventListener('keydown', (e) => {
     if (!gameStarted) return;
     const key = e.key.toLowerCase();
+    
+    // [E] or Space or Enter: Next
     if (key === 'e' || key === ' ' || key === 'enter') nextDialogue();
+    
+    // [Q]: Skip (Fast forward current dialogue or go to next)
+    if (key === 'q') nextDialogue();
+
+    // [R]: Restart
+    if (key === 'r') {
+        if (confirm("Restart dari awal?")) {
+            startDialogue(0);
+        }
+    }
+
+    // [I]: Inventory
     if (key === 'i') toggleInventory(inventoryOverlay.classList.contains('hidden'));
 });
 
